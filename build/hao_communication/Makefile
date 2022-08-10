@@ -56,30 +56,6 @@ CMAKE_BINARY_DIR = /home/hao007/hao_shenlan_ros1/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -112,17 +88,17 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -134,6 +110,30 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,154 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hao_communication/CMakeFiles/person_client.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_client.dir/rule
-.PHONY : hao_communication/CMakeFiles/person_client.dir/rule
+hao_communication/CMakeFiles/string_server.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_server.dir/rule
+.PHONY : hao_communication/CMakeFiles/string_server.dir/rule
 
 # Convenience name for target.
-person_client: hao_communication/CMakeFiles/person_client.dir/rule
+string_server: hao_communication/CMakeFiles/string_server.dir/rule
 
-.PHONY : person_client
+.PHONY : string_server
 
 # fast build rule for target.
-person_client/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_client.dir/build.make hao_communication/CMakeFiles/person_client.dir/build
-.PHONY : person_client/fast
+string_server/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_server.dir/build.make hao_communication/CMakeFiles/string_server.dir/build
+.PHONY : string_server/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
+
+# Convenience name for target.
+hao_communication_gencpp: hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
+
+.PHONY : hao_communication_gencpp
+
+# fast build rule for target.
+hao_communication_gencpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_gencpp.dir/build.make hao_communication/CMakeFiles/hao_communication_gencpp.dir/build
+.PHONY : hao_communication_gencpp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make hao_communication/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/person_server.dir/rule:
@@ -198,79 +333,19 @@ person_server/fast:
 .PHONY : person_server/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/person_subscriber.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_subscriber.dir/rule
-.PHONY : hao_communication/CMakeFiles/person_subscriber.dir/rule
+hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-person_subscriber: hao_communication/CMakeFiles/person_subscriber.dir/rule
+rosgraph_msgs_generate_messages_lisp: hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : person_subscriber
+.PHONY : rosgraph_msgs_generate_messages_lisp
 
 # fast build rule for target.
-person_subscriber/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_subscriber.dir/build.make hao_communication/CMakeFiles/person_subscriber.dir/build
-.PHONY : person_subscriber/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/person_publisher.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_publisher.dir/rule
-.PHONY : hao_communication/CMakeFiles/person_publisher.dir/rule
-
-# Convenience name for target.
-person_publisher: hao_communication/CMakeFiles/person_publisher.dir/rule
-
-.PHONY : person_publisher
-
-# fast build rule for target.
-person_publisher/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_publisher.dir/build.make hao_communication/CMakeFiles/person_publisher.dir/build
-.PHONY : person_publisher/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/string_client.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_client.dir/rule
-.PHONY : hao_communication/CMakeFiles/string_client.dir/rule
-
-# Convenience name for target.
-string_client: hao_communication/CMakeFiles/string_client.dir/rule
-
-.PHONY : string_client
-
-# fast build rule for target.
-string_client/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_client.dir/build.make hao_communication/CMakeFiles/string_client.dir/build
-.PHONY : string_client/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/string_subscriber.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_subscriber.dir/rule
-.PHONY : hao_communication/CMakeFiles/string_subscriber.dir/rule
-
-# Convenience name for target.
-string_subscriber: hao_communication/CMakeFiles/string_subscriber.dir/rule
-
-.PHONY : string_subscriber
-
-# fast build rule for target.
-string_subscriber/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_subscriber.dir/build.make hao_communication/CMakeFiles/string_subscriber.dir/build
-.PHONY : string_subscriber/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/string_publisher.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_publisher.dir/rule
-.PHONY : hao_communication/CMakeFiles/string_publisher.dir/rule
-
-# Convenience name for target.
-string_publisher: hao_communication/CMakeFiles/string_publisher.dir/rule
-
-.PHONY : string_publisher
-
-# fast build rule for target.
-string_publisher/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_publisher.dir/build.make hao_communication/CMakeFiles/string_publisher.dir/build
-.PHONY : string_publisher/fast
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/hao_communication_genpy.dir/rule:
@@ -288,34 +363,139 @@ hao_communication_genpy/fast:
 .PHONY : hao_communication_genpy/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
+hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-hao_communication_generate_messages_py: hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
+roscpp_generate_messages_cpp: hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
-.PHONY : hao_communication_generate_messages_py
+.PHONY : roscpp_generate_messages_cpp
 
 # fast build rule for target.
-hao_communication_generate_messages_py/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/build
-.PHONY : hao_communication_generate_messages_py/fast
+roscpp_generate_messages_cpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/string_server.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_server.dir/rule
-.PHONY : hao_communication/CMakeFiles/string_server.dir/rule
+hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-string_server: hao_communication/CMakeFiles/string_server.dir/rule
+hao_communication_generate_messages_cpp: hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
 
-.PHONY : string_server
+.PHONY : hao_communication_generate_messages_cpp
 
 # fast build rule for target.
-string_server/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_server.dir/build.make hao_communication/CMakeFiles/string_server.dir/build
-.PHONY : string_server/fast
+hao_communication_generate_messages_cpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/build
+.PHONY : hao_communication_generate_messages_cpp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make hao_communication/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/string_publisher.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_publisher.dir/rule
+.PHONY : hao_communication/CMakeFiles/string_publisher.dir/rule
+
+# Convenience name for target.
+string_publisher: hao_communication/CMakeFiles/string_publisher.dir/rule
+
+.PHONY : string_publisher
+
+# fast build rule for target.
+string_publisher/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_publisher.dir/build.make hao_communication/CMakeFiles/string_publisher.dir/build
+.PHONY : string_publisher/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make hao_communication/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/build.make hao_communication/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/hao_communication_geneus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
+
+# Convenience name for target.
+hao_communication_geneus: hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
+
+.PHONY : hao_communication_geneus
+
+# fast build rule for target.
+hao_communication_geneus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_geneus.dir/build.make hao_communication/CMakeFiles/hao_communication_geneus.dir/build
+.PHONY : hao_communication_geneus/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
@@ -348,21 +528,6 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
-
-# Convenience name for target.
-hao_communication_gennodejs: hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
-
-.PHONY : hao_communication_gennodejs
-
-# fast build rule for target.
-hao_communication_gennodejs/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_gennodejs.dir/build.make hao_communication/CMakeFiles/hao_communication_gennodejs.dir/build
-.PHONY : hao_communication_gennodejs/fast
-
-# Convenience name for target.
 hao_communication/CMakeFiles/hao_communication_generate_messages.dir/rule:
 	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages.dir/rule
 .PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages.dir/rule
@@ -376,51 +541,6 @@ hao_communication_generate_messages: hao_communication/CMakeFiles/hao_communicat
 hao_communication_generate_messages/fast:
 	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages.dir/build
 .PHONY : hao_communication_generate_messages/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
-
-# Convenience name for target.
-hao_communication_genlisp: hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
-
-.PHONY : hao_communication_genlisp
-
-# fast build rule for target.
-hao_communication_genlisp/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_genlisp.dir/build.make hao_communication/CMakeFiles/hao_communication_genlisp.dir/build
-.PHONY : hao_communication_genlisp/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/_hao_communication_generate_messages_check_deps_PersonMsg.dir/rule:
@@ -453,19 +573,19 @@ _hao_communication_generate_messages_check_deps_PersonSrv/fast:
 .PHONY : _hao_communication_generate_messages_check_deps_PersonSrv/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_lisp: hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+hao_communication_generate_messages_eus: hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
 
-.PHONY : std_srvs_generate_messages_lisp
+.PHONY : hao_communication_generate_messages_eus
 
 # fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make hao_communication/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
+hao_communication_generate_messages_eus/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/build
+.PHONY : hao_communication_generate_messages_eus/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/hao_communication_generate_messages_lisp.dir/rule:
@@ -483,64 +603,19 @@ hao_communication_generate_messages_lisp/fast:
 .PHONY : hao_communication_generate_messages_lisp/fast
 
 # Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
+hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
 
 # Convenience name for target.
-hao_communication_gencpp: hao_communication/CMakeFiles/hao_communication_gencpp.dir/rule
+hao_communication_genlisp: hao_communication/CMakeFiles/hao_communication_genlisp.dir/rule
 
-.PHONY : hao_communication_gencpp
+.PHONY : hao_communication_genlisp
 
 # fast build rule for target.
-hao_communication_gencpp/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_gencpp.dir/build.make hao_communication/CMakeFiles/hao_communication_gencpp.dir/build
-.PHONY : hao_communication_gencpp/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-hao_communication_generate_messages_eus: hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/rule
-
-.PHONY : hao_communication_generate_messages_eus
-
-# fast build rule for target.
-hao_communication_generate_messages_eus/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_eus.dir/build
-.PHONY : hao_communication_generate_messages_eus/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-hao_communication_generate_messages_cpp: hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/rule
-
-.PHONY : hao_communication_generate_messages_cpp
-
-# fast build rule for target.
-hao_communication_generate_messages_cpp/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_cpp.dir/build
-.PHONY : hao_communication_generate_messages_cpp/fast
-
-# Convenience name for target.
-hao_communication/CMakeFiles/hao_communication_geneus.dir/rule:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
-.PHONY : hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
-
-# Convenience name for target.
-hao_communication_geneus: hao_communication/CMakeFiles/hao_communication_geneus.dir/rule
-
-.PHONY : hao_communication_geneus
-
-# fast build rule for target.
-hao_communication_geneus/fast:
-	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_geneus.dir/build.make hao_communication/CMakeFiles/hao_communication_geneus.dir/build
-.PHONY : hao_communication_geneus/fast
+hao_communication_genlisp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_genlisp.dir/build.make hao_communication/CMakeFiles/hao_communication_genlisp.dir/build
+.PHONY : hao_communication_genlisp/fast
 
 # Convenience name for target.
 hao_communication/CMakeFiles/hao_communication_generate_messages_nodejs.dir/rule:
@@ -556,6 +631,156 @@ hao_communication_generate_messages_nodejs: hao_communication/CMakeFiles/hao_com
 hao_communication_generate_messages_nodejs/fast:
 	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_nodejs.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_nodejs.dir/build
 .PHONY : hao_communication_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/string_client.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_client.dir/rule
+.PHONY : hao_communication/CMakeFiles/string_client.dir/rule
+
+# Convenience name for target.
+string_client: hao_communication/CMakeFiles/string_client.dir/rule
+
+.PHONY : string_client
+
+# fast build rule for target.
+string_client/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_client.dir/build.make hao_communication/CMakeFiles/string_client.dir/build
+.PHONY : string_client/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
+
+# Convenience name for target.
+hao_communication_gennodejs: hao_communication/CMakeFiles/hao_communication_gennodejs.dir/rule
+
+.PHONY : hao_communication_gennodejs
+
+# fast build rule for target.
+hao_communication_gennodejs/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_gennodejs.dir/build.make hao_communication/CMakeFiles/hao_communication_gennodejs.dir/build
+.PHONY : hao_communication_gennodejs/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/build.make hao_communication/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
+.PHONY : hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
+
+# Convenience name for target.
+hao_communication_generate_messages_py: hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/rule
+
+.PHONY : hao_communication_generate_messages_py
+
+# fast build rule for target.
+hao_communication_generate_messages_py/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/build.make hao_communication/CMakeFiles/hao_communication_generate_messages_py.dir/build
+.PHONY : hao_communication_generate_messages_py/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/person_client.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_client.dir/rule
+.PHONY : hao_communication/CMakeFiles/person_client.dir/rule
+
+# Convenience name for target.
+person_client: hao_communication/CMakeFiles/person_client.dir/rule
+
+.PHONY : person_client
+
+# fast build rule for target.
+person_client/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_client.dir/build.make hao_communication/CMakeFiles/person_client.dir/build
+.PHONY : person_client/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/person_subscriber.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_subscriber.dir/rule
+.PHONY : hao_communication/CMakeFiles/person_subscriber.dir/rule
+
+# Convenience name for target.
+person_subscriber: hao_communication/CMakeFiles/person_subscriber.dir/rule
+
+.PHONY : person_subscriber
+
+# fast build rule for target.
+person_subscriber/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_subscriber.dir/build.make hao_communication/CMakeFiles/person_subscriber.dir/build
+.PHONY : person_subscriber/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make hao_communication/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/string_subscriber.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/string_subscriber.dir/rule
+.PHONY : hao_communication/CMakeFiles/string_subscriber.dir/rule
+
+# Convenience name for target.
+string_subscriber: hao_communication/CMakeFiles/string_subscriber.dir/rule
+
+.PHONY : string_subscriber
+
+# fast build rule for target.
+string_subscriber/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/string_subscriber.dir/build.make hao_communication/CMakeFiles/string_subscriber.dir/build
+.PHONY : string_subscriber/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make hao_communication/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+hao_communication/CMakeFiles/person_publisher.dir/rule:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f CMakeFiles/Makefile2 hao_communication/CMakeFiles/person_publisher.dir/rule
+.PHONY : hao_communication/CMakeFiles/person_publisher.dir/rule
+
+# Convenience name for target.
+person_publisher: hao_communication/CMakeFiles/person_publisher.dir/rule
+
+.PHONY : person_publisher
+
+# fast build rule for target.
+person_publisher/fast:
+	cd /home/hao007/hao_shenlan_ros1/build && $(MAKE) -f hao_communication/CMakeFiles/person_publisher.dir/build.make hao_communication/CMakeFiles/person_publisher.dir/build
+.PHONY : person_publisher/fast
 
 src/person_client.o: src/person_client.cpp.o
 
@@ -779,39 +1004,54 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... person_client"
-	@echo "... person_server"
 	@echo "... list_install_components"
-	@echo "... person_subscriber"
-	@echo "... person_publisher"
-	@echo "... string_client"
-	@echo "... string_subscriber"
 	@echo "... edit_cache"
-	@echo "... string_publisher"
-	@echo "... hao_communication_genpy"
-	@echo "... hao_communication_generate_messages_py"
+	@echo "... test"
 	@echo "... string_server"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... hao_communication_gencpp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... person_server"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... hao_communication_genpy"
+	@echo "... rebuild_cache"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... hao_communication_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... string_publisher"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... install/local"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... hao_communication_geneus"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_py"
-	@echo "... hao_communication_gennodejs"
 	@echo "... hao_communication_generate_messages"
-	@echo "... test"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... install"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... hao_communication_genlisp"
 	@echo "... _hao_communication_generate_messages_check_deps_PersonMsg"
 	@echo "... _hao_communication_generate_messages_check_deps_PersonSrv"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... hao_communication_generate_messages_lisp"
-	@echo "... hao_communication_gencpp"
+	@echo "... install"
 	@echo "... hao_communication_generate_messages_eus"
-	@echo "... hao_communication_generate_messages_cpp"
-	@echo "... hao_communication_geneus"
-	@echo "... rebuild_cache"
+	@echo "... hao_communication_generate_messages_lisp"
+	@echo "... hao_communication_genlisp"
 	@echo "... hao_communication_generate_messages_nodejs"
+	@echo "... string_client"
+	@echo "... hao_communication_gennodejs"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... hao_communication_generate_messages_py"
+	@echo "... person_client"
+	@echo "... person_subscriber"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... string_subscriber"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... person_publisher"
 	@echo "... src/person_client.o"
 	@echo "... src/person_client.i"
 	@echo "... src/person_client.s"

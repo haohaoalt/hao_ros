@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="hao_communication" type="person_subscriber" name="listener" output="screen" />
+    <node pkg="hao_communication" type="person_publisher" name="talker" output="screen"/>
+</launch>

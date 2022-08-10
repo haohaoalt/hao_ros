@@ -10,6 +10,8 @@ project(hao_common)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  tf
+  turtlesim
   std_msgs
 )
 
@@ -204,3 +206,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(turtle_tf_broadcaster src/tf.cpp)
+target_link_libraries(turtle_tf_broadcaster ${catkin_LIBRARIES})
+
+add_executable(turtle_tf_listener src/tf_listen.cpp)
+target_link_libraries(turtle_tf_listener ${catkin_LIBRARIES})

@@ -131,8 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hao007/hao_shenlan_ros1/build/gtest/cmake_install.cmake")
-  include("/home/hao007/hao_shenlan_ros1/build/hao_common/cmake_install.cmake")
   include("/home/hao007/hao_shenlan_ros1/build/hao_communication/cmake_install.cmake")
+  include("/home/hao007/hao_shenlan_ros1/build/hao_common/cmake_install.cmake")
 
 endif()
 
