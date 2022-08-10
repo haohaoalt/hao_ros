@@ -1,0 +1,8 @@
+prefix=/home/hao007/hao_shenlan_ros1/install
+
+Name: hao_common
+Description: Description of hao_common
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

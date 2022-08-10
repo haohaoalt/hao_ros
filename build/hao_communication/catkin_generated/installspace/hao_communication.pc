@@ -1,0 +1,8 @@
+prefix=/home/hao007/hao_shenlan_ros1/install
+
+Name: hao_communication
+Description: Description of hao_communication
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs message_runtime

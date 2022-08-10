@@ -1,0 +1,2 @@
+hao_common:hao_communication
+-DCATKIN_DEVEL_PREFIX=/home/hao007/hao_shenlan_ros1/devel -DCMAKE_INSTALL_PREFIX=/home/hao007/hao_shenlan_ros1/install -G Unix Makefiles
