@@ -1,5 +1,9 @@
 {
     "files.associations": {
         "iosfwd": "cpp"
-    }
+    },
+    "python.autoComplete.extraPaths": [
+        "/home/hao007/hao_shenlan_ros1/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
 }
