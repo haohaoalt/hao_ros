@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+    xmlns:fishros="http://fishros.com">
+    <xacro:macro name="box_inertia" params="m w h d">
+        <inertial>
+            <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi/2}"/>
+            <mass value="${m}"/>
+            <inertia ixx="${(m/12) * (h*h + d*d)}" ixy="0.0" ixz="0.0" iyy="${(m/12) * (w*w + d*d)}" iyz="0.0" izz="${(m/12) * (w*w + h*h)}"/>
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="cylinder_inertia" params="m r h">
+        <inertial>
+            <origin xyz="0 0 0" rpy="${pi/2} 0 0" />
+            <mass value="${m}"/>
+            <inertia ixx="${(m/12) * (3*r*r + h*h)}" ixy = "0" ixz = "0" iyy="${(m/12) * (3*r*r + h*h)}" iyz = "0" izz="${(m/2) * (r*r)}"/>
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="sphere_inertia" params="m r">
+        <inertial>
+            <mass value="${m}"/>
+            <inertia ixx="${(2/5) * m * (r*r)}" ixy="0.0" ixz="0.0" iyy="${(2/5) * m * (r*r)}" iyz="0.0" izz="${(2/5) * m * (r*r)}"/>
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="sphere_visual" params="r origin_r origin_p origin_y">
+        <visual>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <sphere radius="${r}"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 0.8 1.0"/>
+            </material>
+        </visual>
+    </xacro:macro>
+
+    <xacro:macro name="sphere_collision" params="r origin_r origin_p origin_y">
+        <collision>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <sphere radius="${r}"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 0.8 0.0 1.0"/>
+            </material>
+        </collision>
+    </xacro:macro>
+
+
+    <xacro:macro name="box_visual" params="w d h origin_r origin_p origin_y">
+        <visual>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <box size="${w} ${d} ${h}" />
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 0.8 1.0"/>
+            </material>
+        </visual>
+    </xacro:macro>
+
+    <xacro:macro name="box_collision" params="w d h origin_r origin_p origin_y">
+        <collision>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <box size="${w} ${d} ${h}" />
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 0.8 0.0 1.0"/>
+            </material>
+        </collision>
+    </xacro:macro>
+
+
+    <xacro:macro name="cylinder_visual" params="r h origin_r origin_p origin_y">
+        <visual>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <cylinder length="${h}" radius="${r}"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 0.8 1.0"/>
+            </material>
+        </visual>
+    </xacro:macro>
+
+
+    <xacro:macro name="cylinder_collision" params="r h origin_r origin_p origin_y">
+        <collision>
+            <origin xyz="0 0 0" rpy="${origin_r} ${origin_p} ${origin_y}"/>
+            <geometry>
+                <cylinder length="${h}" radius="${r}"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 0.8 1.0"/>
+            </material>
+        </collision>
+    </xacro:macro>
+
+
+</robot>
