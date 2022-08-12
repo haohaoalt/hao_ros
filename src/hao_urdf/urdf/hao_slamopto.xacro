@@ -9,8 +9,8 @@
 	<xacro:property name="kinect_offset_y" value="0" />
 	<xacro:property name="kinect_offset_z" value="0.035" />
 
-  <xacro:property name="rplidar_offset_x1" value="-0.15" />
-  <xacro:property name="rplidar_offset_x2" value="0.15" />
+  <xacro:property name="rplidar_offset_x1" value="-0.20" />
+  <xacro:property name="rplidar_offset_x2" value="0.20" />
 	<xacro:property name="rplidar_offset_y" value="0" />
 	<xacro:property name="rplidar_offset_z" value="0.028" />
 
