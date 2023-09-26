@@ -57,6 +57,7 @@ add_message_files(
 add_service_files(
   FILES
   PersonSrv.srv
+  AddInts.srv
 )
 
 generate_messages(
@@ -225,3 +226,18 @@ add_dependencies(person_server ${PROJECT_NAME}_gencpp)
 add_executable(person_client src/person_client.cpp)
 target_link_libraries(person_client ${catkin_LIBRARIES})
 add_dependencies(person_client ${PROJECT_NAME}_gencpp)
+
+add_executable(AddInts_Server src/AddInts_Server.cpp)
+add_executable(AddInts_Client src/AddInts_Client.cpp)
+
+
+add_dependencies(AddInts_Server ${PROJECT_NAME}_gencpp)
+add_dependencies(AddInts_Client ${PROJECT_NAME}_gencpp)
+
+
+target_link_libraries(AddInts_Server
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(AddInts_Client
+  ${catkin_LIBRARIES}
+)
