@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   turtlesim
   std_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -161,10 +162,11 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# catkin_install_python(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+catkin_install_python(PROGRAMS
+  scripts/circle_pub.py
+  scripts/node_sub.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
@@ -211,3 +213,9 @@ target_link_libraries(turtle_tf_broadcaster ${catkin_LIBRARIES})
 
 add_executable(turtle_tf_listener src/tf_listen.cpp)
 target_link_libraries(turtle_tf_listener ${catkin_LIBRARIES})
+
+add_executable(circle_pub src/circle_pub.cpp)
+target_link_libraries(circle_pub ${catkin_LIBRARIES})
+
+add_executable(node_sub src/node_sub.cpp)
+target_link_libraries(node_sub ${catkin_LIBRARIES})
