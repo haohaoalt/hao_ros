@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+    </node>
+
+    <node pkg="learning_communication" type="newTurtle_keyboard_client" name="newTurtle_keyboard_client" output="screen"/>
+
+</launch>

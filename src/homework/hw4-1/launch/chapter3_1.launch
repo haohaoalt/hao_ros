@@ -1,0 +1,9 @@
+<launch>
+
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+    </node>
+
+    <node pkg="learning_communication" type="turtle_publisher" name="turtle_publisher" output="screen"/>
+　　　　<node pkg="learning_communication" type="turtle_subscriber" name="turtle_subscriber" output="screen"/>
+
+</launch>

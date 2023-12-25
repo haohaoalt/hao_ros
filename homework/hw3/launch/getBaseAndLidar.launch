@@ -1,0 +1,7 @@
+<launch>
+    <param name="delta_x_lb" value="0.1"/>
+    <param name="delta_y_lb" value="0.0"/>
+    <param name="delta_z_lb" value="0.2"/>
+    <node pkg="homework_3" type="broadcaster" name="base_laser_broadcaster"/>
+    <node pkg="homework_3" type="lidar_listener" name="listener" output="screen"/>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="homework_2" type="control_with_manager" name="manager" ns="practice2" output="screen"/>
+</launch>

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<robot name="myRobot">
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="1.2 0.6 0.2"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="1 0.34 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <origin xyz="0 -0.34 -0.05" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="left_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+            <geometry>
+                <cylinder length="0.08" radius="0.2"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="right_wheel_joint" type="continuous">
+        <origin xyz="0 0.34 -0.05" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="right_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+            <geometry>
+                <cylinder length="0.08" radius="0.2"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="front_caster_joint" type="continuous">
+        <origin xyz="0.58 0 -0.1475" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="front_caster_link"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="front_caster_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0475"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="back_caster_joint" type="continuous">
+        <origin xyz="-0.58 0 -0.1475" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="back_caster_link"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="back_caster_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.0475"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="RGBD_joint" type="fixed">
+        <origin xyz="0.58 0 0.13" rpy="0 0 1.5707"/>
+        <parent link="base_link"/>
+        <child link="RGBD_camera_link"/>
+    </joint>
+
+    <link name="RGBD_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/kinect.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="left_camera_bracket_joint" type="prismatic">
+        <origin xyz="0.5 -0.4 0.1" rpy="0 0 3.1415"/>
+        <parent link="base_link"/>
+        <child link="left_camera_bracket_link"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="30" velocity="1.0" lower="-0.3" upper="0"/>
+    </joint>
+
+    <link name="left_camera_bracket_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/left_camera_slide.dae"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.75294 0.75294 0.75294 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="left_camera_joint" type="fixed">
+        <origin xyz="0 0.16 0" rpy="0 0 0"/>
+        <parent link="left_camera_bracket_link"/>
+        <child link="left_camera_link"/>
+    </joint>
+
+    <link name="left_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 3.1415"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/camera.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="right_camera_bracket_joint" type="prismatic">
+        <origin xyz="0.5 0.4 0.1" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_camera_bracket_link"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="30" velocity="1.0" lower="-0.3" upper="0"/>
+    </joint>
+
+    <link name="right_camera_bracket_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/right_camera_slide.dae"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.75294 0.75294 0.75294 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="right_camera_joint" type="fixed">
+        <origin xyz="0 0.16 0" rpy="0 0 0"/>
+        <parent link="right_camera_bracket_link"/>
+        <child link="right_camera_link"/>
+    </joint>
+
+    <link name="right_camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/camera.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="lidar_bracket_joint" type="fixed">
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="lidar_bracket_link"/>
+    </joint>
+
+    <link name="lidar_bracket_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/lidar_bracket_link.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="velodyne_bracket_joint" type="fixed">
+        <origin xyz="0 0 0.34" rpy="0 0 0"/>
+        <parent link="lidar_bracket_link"/>
+        <child link="velodyne_bracket_link"/>
+    </joint>
+
+    <link name="velodyne_bracket_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.03" radius="0.07"/>
+            </geometry>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="velodyne_joint" type="fixed">
+        <origin xyz="0 0 0.015" rpy="0 0 0"/>
+        <parent link="velodyne_bracket_link"/>
+        <child link="velodyne_link"/>
+    </joint>
+
+    <link name="velodyne_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.03" radius="0.07"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.89 0.89 0.89 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="orientation_joint" type="fixed">
+        <origin xyz="-0.2 0 0.1" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="gps_link"/>
+    </joint>
+
+    <link name="gps_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mbot_description/meshes/dae/gps_link.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+
+
+</robot>

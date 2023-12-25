@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="homework_2" type="turtle_twist_publisher" name="tpub" ns="practice1"/>
+    <node pkg="homework_2" type="turtle_pose_subscriber" name="tsub" ns="practice1" output="screen"/>
+</launch>

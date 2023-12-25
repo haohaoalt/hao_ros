@@ -1,0 +1,44 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"RGBD_camera_link" [label="RGBD_camera_link"];
+"back_caster_link" [label="back_caster_link"];
+"front_caster_link" [label="front_caster_link"];
+"left_camera_bracket_link" [label="left_camera_bracket_link"];
+"left_camera_link" [label="left_camera_link"];
+"left_wheel_link" [label="left_wheel_link"];
+"lidar_bracket_link" [label="lidar_bracket_link"];
+"velodyne_bracket_link" [label="velodyne_bracket_link"];
+"velodyne_link" [label="velodyne_link"];
+"gps_link" [label="gps_link"];
+"right_camera_bracket_link" [label="right_camera_bracket_link"];
+"right_camera_link" [label="right_camera_link"];
+"right_wheel_link" [label="right_wheel_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "RGBD_joint" [label="xyz: 0.58 0 0.13 \nrpy: 0 -0 1.5707"]
+"RGBD_joint" -> "RGBD_camera_link"
+"base_link" -> "back_caster_joint" [label="xyz: -0.58 0 -0.1475 \nrpy: 0 -0 0"]
+"back_caster_joint" -> "back_caster_link"
+"base_link" -> "front_caster_joint" [label="xyz: 0.58 0 -0.1475 \nrpy: 0 -0 0"]
+"front_caster_joint" -> "front_caster_link"
+"base_link" -> "left_camera_bracket_joint" [label="xyz: 0.5 -0.4 0.1 \nrpy: 0 -0 3.1415"]
+"left_camera_bracket_joint" -> "left_camera_bracket_link"
+"left_camera_bracket_link" -> "left_camera_joint" [label="xyz: 0 0.16 0 \nrpy: 0 -0 0"]
+"left_camera_joint" -> "left_camera_link"
+"base_link" -> "left_wheel_joint" [label="xyz: 0 -0.34 -0.05 \nrpy: 0 -0 0"]
+"left_wheel_joint" -> "left_wheel_link"
+"base_link" -> "lidar_bracket_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"lidar_bracket_joint" -> "lidar_bracket_link"
+"lidar_bracket_link" -> "velodyne_bracket_joint" [label="xyz: 0 0 0.34 \nrpy: 0 -0 0"]
+"velodyne_bracket_joint" -> "velodyne_bracket_link"
+"velodyne_bracket_link" -> "velodyne_joint" [label="xyz: 0 0 0.015 \nrpy: 0 -0 0"]
+"velodyne_joint" -> "velodyne_link"
+"base_link" -> "orientation_joint" [label="xyz: -0.2 0 0.1 \nrpy: 0 -0 0"]
+"orientation_joint" -> "gps_link"
+"base_link" -> "right_camera_bracket_joint" [label="xyz: 0.5 0.4 0.1 \nrpy: 0 -0 0"]
+"right_camera_bracket_joint" -> "right_camera_bracket_link"
+"right_camera_bracket_link" -> "right_camera_joint" [label="xyz: 0 0.16 0 \nrpy: 0 -0 0"]
+"right_camera_joint" -> "right_camera_link"
+"base_link" -> "right_wheel_joint" [label="xyz: 0 0.34 -0.05 \nrpy: 0 -0 0"]
+"right_wheel_joint" -> "right_wheel_link"
+}
