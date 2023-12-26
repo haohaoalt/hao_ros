@@ -1,5 +1,0 @@
-<launch>
-    <node pkg="learning_tf" type="robot_broadcaster" name="robot_broadcaster" output="screen"/>
-　　　　<node pkg="learning_tf" type="robot_listener" name="robot_listener" output="screen"/>
-
-</launch>

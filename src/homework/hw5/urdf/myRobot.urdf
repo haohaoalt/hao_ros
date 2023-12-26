@@ -99,7 +99,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/kinect.dae"/>
+                <mesh filename="package://hw5/meshes/kinect.dae"/>
             </geometry>
         </visual>
     </link>
@@ -116,7 +116,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/left_camera_slide.dae"/>
+                <mesh filename="package://hw5/meshes/dae/left_camera_slide.dae"/>
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -134,7 +134,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 3.1415"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/camera.dae"/>
+                <mesh filename="package://hw5/meshes/dae/camera.dae"/>
             </geometry>
         </visual>
     </link>
@@ -151,7 +151,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/right_camera_slide.dae"/>
+                <mesh filename="package://hw5/meshes/dae/right_camera_slide.dae"/>
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -169,7 +169,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/camera.dae"/>
+                <mesh filename="package://hw5/meshes/dae/camera.dae"/>
             </geometry>
         </visual>
     </link>
@@ -184,7 +184,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/lidar_bracket_link.dae"/>
+                <mesh filename="package://hw5/meshes/dae/lidar_bracket_link.dae"/>
             </geometry>
         </visual>
     </link>
@@ -235,7 +235,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://mbot_description/meshes/dae/gps_link.dae"/>
+                <mesh filename="package://hw5/meshes/dae/gps_link.dae"/>
             </geometry>
         </visual>
     </link>
