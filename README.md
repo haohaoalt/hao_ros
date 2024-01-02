@@ -1,7 +1,7 @@
 <!--
  * @Author: zhanghao
  * @Date: 2022-08-10 18:47:29
- * @LastEditTime: 2023-12-26 10:07:58
+ * @LastEditTime: 2024-01-02 10:15:13
  * @FilePath: /hao_shenlan_ros1/README.md
  * @Description:  
 -->
@@ -22,6 +22,15 @@ cd .gazebo/models
 git clone https://github.com/haohaoalt/gazebo_models.git
 ```
 `open gazebo & add Path`
+roslaunch hao_gazebo slamopto.launch
+
+![1704158775748](image/README/1704158775748.png)
+roslaunch hao_gazebo slamopto_gazebo.launch 
+
+![1704158844263](image/README/1704158844263.png)
+
+
+![1704159745939](image/README/1704159745939.png)
 
 ## 05 URDF
 
@@ -71,6 +80,13 @@ rviz and add tf
 roslaunch hw5 display_mbot.launch 
 
 ## hw6
+作业
+
+![1704160657935](image/README/1704160657935.png)
+
+roslaunch hw6 display_mbot1.launch 
+
+![1704161680936](image/README/1704161680936.png)
 
 ## hw7
 

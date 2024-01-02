@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<robot name="hao" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-    <xacro:include filename="$(find hao_urdf)/urdf/hao_body.xacro" />
-
-    <robot_body/>
-
-</robot>
