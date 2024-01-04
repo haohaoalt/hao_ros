@@ -1,4 +1,0 @@
-<launch>
-    <node pkg="hao_communication" type="AddInts_Server" name="Server" output="screen" />
-    <!-- <node pkg="hao_communication" type="AddInts_Client" name="Client" output="screen"/> -->
-</launch>
